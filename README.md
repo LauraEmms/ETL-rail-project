@@ -23,7 +23,7 @@ https://dataportal.orr.gov.uk/performance
 ### 2. Transform
 - Removes empty or irrelevant columns
 - Standardises column names (lowercase, trimmed, consistent formatting)
-- Handles inconsistent values (e.g. “[u]”, “[z]” placeholders)
+- Handles inconsistent values (e.g. “[u]”, “[z]”)
 - Adds a `source_sheet` column to preserve traceability across datasets
 
 ### 3. Load
@@ -42,7 +42,7 @@ This diagram shows the end-to-end data pipeline from raw Excel data through tran
 #### GitHub Actions Pipeline
 The ETL Process is fully automated using GitHub Actions and runs:
 - On every push to the `main` branch
-- On a daily schedule (8:00 AM)
+- On a daily schedule (08:00 AM)
 - Manually via workflow dispatch
   
 #### Pipeline Steps:
@@ -55,14 +55,13 @@ The ETL Process is fully automated using GitHub Actions and runs:
 This ensures consistent and reproducible data processing.
 
 ### Error Handling & Robustness
-The pipeline is designed to be robust:
+To ensure robustness, the pipeline:
   - Handles missing or non-numeric sheets gracefully
   - Skips empty datasets without failing the pipeline
-  - Logs errors and processing steps to console
+  - Prints errors and processing steps to console
   - Ensures failure in one sheet does not interrupt full execution
 
 ### Pipeline Workflow 
-This image shows how the ETL script is executed automatically through GitHub Actions.
 
 ![ETL Pipeline](docs/etl_pipeline.png)
 
@@ -77,7 +76,7 @@ Planned next steps include:
 ### Key Skills Demonstrated
 - ETL pipeline design and implementation
 - Data cleaning and transformation using pandas
-- Working with real-world multi-sheet datasets
+- Working with real-world and inconsistent multi-sheet datasets
 - CI/CD automation using GitHub Actions and Azure DevOps
 - Basic data engineering workflow design
   
