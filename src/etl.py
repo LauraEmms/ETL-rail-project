@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import datetime
 import numpy as np
 import pandas as pd
 import config
@@ -83,9 +83,9 @@ for sheet in xls.sheet_names:
     # Saved cleaned data to CSV outputs with date
     clean_name = sheet.split(" ", 1)[1] if " " in sheet else sheet
     
-    file_name = clean_name.replace(" ","_").lower() + ".xls"
+    file_name = clean_name.replace(" ","_").lower() + ".csv"
 
-    output_path = f"output/{date.today().strftime('%Y-%m-%d')}_{file_name}"
+    output_path = f"output/{datetime.now().strftime('%Y-%m-%d')}_{file_name}"
     
     df.to_csv(output_path, index=False)
     print(f"Saved cleaned data for sheet {sheet} to {output_path}")
