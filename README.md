@@ -50,7 +50,7 @@ The ETL Process is fully automated using GitHub Actions and runs:
 #### Pipeline Steps:
 1. Checkout repository
 2. Set up Python environment
-3. Install depenencies
+3. Install dependencies
 4. Run ETL script
 5. Upload cleaned CSV outputs as artifacts
 
