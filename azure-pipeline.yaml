@@ -29,7 +29,6 @@ stages:
     - script: |
         echo "ETL Pipeline Failed! Check logs for details."
       condition: failed()
-      displayName: "Failure Notification"
 
     - task: PublishPipelineArtifact@1
       displayName: 'Publish CSV Outputs'
