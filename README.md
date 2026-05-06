@@ -1,11 +1,9 @@
 # ETL Pipeline for Rail Performance Data (Multi-Sheet Excel)
 
 ## Overview
-This project demonstrates an end-to-end ETL (Extract, Transform, Load) pipeline built using Python to process data for Rail performance, spread across multiple Excel sheets.
-The goals of this project are to:
-- Clean and standardise inconsistent data
-- Automate processing using CI/CD pipelines (using both GitHub Actions and Azure DevOps)
-- Prepare structured outputs ready for analytics and dashboards
+This project demonstrates an end-to-end ETL (Extract, Transform, Load) pipeline built in Python to process UK rail performance data stored across multiple Excel sheets. The pipeline automates data cleaning and transformation to produce structured outputs suitable for analysis and dashboarding.
+
+The goal is to simulate a lightweight data engineering workflow with CI/CD automation and reproducible data processing.
 
 ### Data Source
 The data source contains public sector information licensed under the Open Government Licence v3.0 from the Office of Rail and Road:
@@ -13,32 +11,29 @@ https://dataportal.orr.gov.uk/statistics/performance/passenger-rail-performance/
 
 ## Tech Stack
 - Python (pandas, numpy)
-- Excel (multi-sheet raw dataset)
+- Excel (multi-sheet datasets)
 - GitHub Actions (CI/CD automation)
 - Azure DevOps Pipeline
-- _Planned_ Power BI / dashboarding tool to visualise cleaned outputs
+- _Planned_ Power BI (planned for visualisation)
 
 ## ETL Process
 ### 1. Extract
 - Loads an Excel workbook containing multiple sheets
 - Dynamically reads all sheet names
-- Skips non-data sheets (e.g. cover pages, notes)
+- Excludes non-data sheets (e.g. notes, cover pages)
 
 ### 2. Transform
-- Dropping empty or unnamed columns
-- Standardising column names (lowercase, trimmed, consistent spacing)
-- Fuzzy renaming of inconsistent column headers
-- Handling invalid values (e.g. "[u]", "[z]")
-- Adding a `source_sheet` column for tracability for reporting dashboards
+- Removes empty or irrelevant columns
+- Standardises column names (lowercase, trimmed, consistent formatting)
+- Handles inconsistent values (e.g. “[u]”, “[z]” placeholders)
+- Adds a `source_sheet` column to preserve traceability across datasets
 
 ### 3. Load
 - Outputs cleaned data as CSV files
-- Filenames include:
-  -  Original sheet name (cleaned)
+- File naming include:
+  -  Cleaned sheet name
   -  Processing date
-- Saved to:
-  - `/output` directory (Azure DevOps) or,
-  - Uploaded as artifatcts via GitHub Actions
+- Saves outputs locally and as CI/CD artifacts
 
 ### Data Flow Architecture
 This diagram shows the end-to-end data pipeline from raw Excel data through transformation and automation to final outputs.
@@ -46,13 +41,11 @@ This diagram shows the end-to-end data pipeline from raw Excel data through tran
 ![Data Flow](docs/etl_diagram.png)
 
 ## Automation (CI/CD)
-### GitHub Actions Pipeline
-The ETL Process is fully automated using GitHub Actions. The pipeline is scheduled to run daily (8:00 AM) and generates clean CSV outputs ready for analytics dashbhoards, which are stored as downloadable artifacts in each run.
-
-#### Triggers:
-- Push to main branch
-- Daily scheduled run (8:00 AM)
-- Manual Trigger
+#### GitHub Actions Pipeline
+The ETL Process is fully automated using GitHub Actions and runs:
+- On every push to the `main` branch
+- On a daily schedule (8:00 AM)
+- Manually via workflow dispatch
   
 #### Pipeline Steps:
 1. Checkout repository
@@ -60,16 +53,15 @@ The ETL Process is fully automated using GitHub Actions. The pipeline is schedul
 3. Install depdendencies
 4. Run ETL script
 5. Upload cleaned CSV outputs as artifacts
-   
-The purpose of the pipeline is to ensure consistent, repeatable data processing.
+
+This ensures consistent and reproducible data processing.
 
 ### Error Handling & Robustness
-The pipeline includes graceful handling of:
-  - Missing or non-numeric sheets
-  - Empty datasets and columns
-  - Invalid numeric values
-- Logging of progress and errors to console output
-- Isolation of failures (one bad sheet does not stop the full pipeline)
+The pipeline is designed to be robust:
+  - Handbles missing or non-numeric sheets gracefully
+  - Skips empty datasets without failing the pipeline
+  - Logs errors and processing steps to console
+  - Ensures failure in one sheet does not interrupt full execution
 
 ### Pipeline Workflow 
 This image shows how the ETL script is executed automatically through GitHub Actions.
@@ -78,18 +70,18 @@ This image shows how the ETL script is executed automatically through GitHub Act
 
 ### Future Improvements
 Planned next steps include:
-1. Build a reporting dashboard using cleaned outputs (Power BI / Tableau)
-2. Add data validation checks (e.g. schema enforcement)
-3. Improve logging (structured logs instead of print statements)
-4. Unit tests for transformation logic
-5. Store outputs in a database instead of flat files
+- Build interactive dashboards using Power BI or Tableau
+- Add schema validation for input data
+- Replace print-based logging with structured logging
+- Introduce unit tests for transformation logic
+- Store processed outputs in a database instead of CSV files
 
 ### Key Skills Demonstrated
-- Data cleansing and transformation with pandas
-- Handling real-world multi-sheet datasets
-- Writing maintainable ETL pipelines
-- Configuring with CI/CD pipelines for automation
-- Basic data engineering and architecture concepts 
+- ETL pipeline design and implementation
+- Data cleaning and transformation using pandas
+- Working with real-world multi-sheet datasets
+- CI/CD automation using GitHub Actions and Azure DevOps
+- Basic engineering workflow design
   
 
 
