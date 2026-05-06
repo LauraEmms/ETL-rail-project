@@ -1,4 +1,6 @@
-# ETL Pipeline for Cleansing Multi-Sheet Excel Data (Rail Performance)
+# ETL Pipeline for Rail Performance Data (Multi-Sheet Excel)
+
+## Overview
 This project demonstrates an end-to-end ETL (Extract, Transform, Load) pipeline built using Python to process Excel data spread across multiple sheets.
 The goals of this project are to:
 - Clean and standardise inconsistent data
@@ -38,6 +40,11 @@ https://dataportal.orr.gov.uk/statistics/performance/passenger-rail-performance/
   - `/output` directory (Azure DevOps) or,
   - Uploaded as artifatcts via GitHub Actions
 
+### Data Flow Architecture
+This diagram shows the end-to-end data pipeline from raw Excel data through transformation and automation to final outputs.
+
+![Data Flow](docs/etl_diagram.png)
+
 ## Automation (CI/CD)
 ### GitHub Actions Pipeline
 The ETL Process is fully automated using GitHub Actions. The pipeline runs daily and successfully generates CSV outputs, which are stored as downloadable artifacts in each run.
@@ -64,6 +71,11 @@ The pipeline includes graceful handling of:
 - Logging of progress and errors to console output
 - Isolation of failures (one bad sheet does not stop the full pipeline)
 
+### Pipeline Workflow 
+This image shows how the ETL script is executed automatically through GitHub Actions.
+
+![ETL Pipeline](docs/etl_pipeline.png)
+
 ### Future Improvements
 Planned next steps include:
 1. Build a reporting dashboard using cleaned outputs (Power BI / Tableau)
@@ -71,9 +83,6 @@ Planned next steps include:
 3. Improve logging (structured logs instead of print statements)
 4. Unit tests for transformation logic
 5. Store outputs in a database instead of flat files
-
-### Data Flow Architecture 
-- [Insert Mural Diagram Here]
 
 ### Key Skills Demonstrated
 - Data cleansing and transformation with pandas
