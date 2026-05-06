@@ -50,7 +50,7 @@ The ETL Process is fully automated using GitHub Actions and runs:
 #### Pipeline Steps:
 1. Checkout repository
 2. Set up Python environment
-3. Install depdenencies
+3. Install depenencies
 4. Run ETL script
 5. Upload cleaned CSV outputs as artifacts
 
@@ -81,7 +81,7 @@ Planned next steps include:
 - Data cleaning and transformation using pandas
 - Working with real-world multi-sheet datasets
 - CI/CD automation using GitHub Actions and Azure DevOps
-- Basic engineering workflow design
+- Basic data engineering workflow design
   
 
 
