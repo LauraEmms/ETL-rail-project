@@ -1,14 +1,14 @@
 # ETL Pipeline for Rail Performance Data (Multi-Sheet Excel)
 
 ## Overview
-This project demonstrates an end-to-end ETL (Extract, Transform, Load) pipeline built using Python to process Excel data spread across multiple sheets.
+This project demonstrates an end-to-end ETL (Extract, Transform, Load) pipeline built using Python to process data for Rail performance, spread across multiple Excel sheets.
 The goals of this project are to:
 - Clean and standardise inconsistent data
 - Automate processing using CI/CD pipelines (using both GitHub Actions and Azure DevOps)
-- Prepare structured outputs for analytics and dashboards
+- Prepare structured outputs ready for analytics and dashboards
 
 ### Data Source
-Contains public sector information licensed under the Open Government Licence v3.0 from the Office of Rail and Road:
+The data source contains public sector information licensed under the Open Government Licence v3.0 from the Office of Rail and Road:
 https://dataportal.orr.gov.uk/statistics/performance/passenger-rail-performance/
 
 ## Tech Stack
@@ -47,7 +47,7 @@ This diagram shows the end-to-end data pipeline from raw Excel data through tran
 
 ## Automation (CI/CD)
 ### GitHub Actions Pipeline
-The ETL Process is fully automated using GitHub Actions. The pipeline runs daily and successfully generates CSV outputs, which are stored as downloadable artifacts in each run.
+The ETL Process is fully automated using GitHub Actions. The pipeline is scheduled to run daily (8:00 AM) and generates clean CSV outputs ready for analytics dashbhoards, which are stored as downloadable artifacts in each run.
 
 #### Triggers:
 - Push to main branch
@@ -61,7 +61,7 @@ The ETL Process is fully automated using GitHub Actions. The pipeline runs daily
 4. Run ETL script
 5. Upload cleaned CSV outputs as artifacts
    
-This ensures consistent, repeatable data processing.
+The purpose of the pipeline is to ensure consistent, repeatable data processing.
 
 ### Error Handling & Robustness
 The pipeline includes graceful handling of:
@@ -86,10 +86,10 @@ Planned next steps include:
 
 ### Key Skills Demonstrated
 - Data cleansing and transformation with pandas
-- Handling messy, real-world datasets
+- Handling real-world multi-sheet datasets
 - Writing maintainable ETL pipelines
-- CI/CD pipeline setup and automation
-- Basic data engineering concepts 
+- Configuring with CI/CD pipelines for automation
+- Basic data engineering and architecture concepts 
   
 
 
