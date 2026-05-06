@@ -28,7 +28,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run ETL script
-        run: python src/etl.py
+        run: python -m src.etl
 
       - name: Upload CSV outputs
         uses: actions/upload-artifact@v4
