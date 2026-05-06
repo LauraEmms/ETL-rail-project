@@ -14,7 +14,7 @@ https://dataportal.orr.gov.uk/statistics/performance/passenger-rail-performance/
 - Excel (multi-sheet datasets)
 - GitHub Actions (CI/CD automation)
 - Azure DevOps Pipeline
-- _Planned_ Power BI (planned for visualisation)
+- _Planned_ Power BI (for visualisation)
 
 ## ETL Process
 ### 1. Extract
@@ -30,7 +30,7 @@ https://dataportal.orr.gov.uk/statistics/performance/passenger-rail-performance/
 
 ### 3. Load
 - Outputs cleaned data as CSV files
-- File naming include:
+- File naming includes:
   -  Cleaned sheet name
   -  Processing date
 - Saves outputs locally and as CI/CD artifacts
@@ -50,7 +50,7 @@ The ETL Process is fully automated using GitHub Actions and runs:
 #### Pipeline Steps:
 1. Checkout repository
 2. Set up Python environment
-3. Install depdendencies
+3. Install depdenencies
 4. Run ETL script
 5. Upload cleaned CSV outputs as artifacts
 
@@ -58,7 +58,7 @@ This ensures consistent and reproducible data processing.
 
 ### Error Handling & Robustness
 The pipeline is designed to be robust:
-  - Handbles missing or non-numeric sheets gracefully
+  - Handles missing or non-numeric sheets gracefully
   - Skips empty datasets without failing the pipeline
   - Logs errors and processing steps to console
   - Ensures failure in one sheet does not interrupt full execution
