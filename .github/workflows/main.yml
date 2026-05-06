@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  etl:
+  ETL Railway Data Pipeline:
     runs-on: ubuntu-latest
 
     steps:
