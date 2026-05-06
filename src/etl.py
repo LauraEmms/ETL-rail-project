@@ -37,7 +37,7 @@ for sheet in xls.sheet_names:
         print(f"Sheet {sheet} is empty, skipping")
         continue
     
-    # drop empty columns
+    # Drop empty columns
     df = df.loc[:, ~df.columns.str.contains(r"^unnamed", case=False, na=False)]
     df = df.dropna(axis=1, how="all") 
 
@@ -79,11 +79,12 @@ for sheet in xls.sheet_names:
     # Add source sheet column for traceability (for Power BI)
     df["source_sheet"] = sheet
 
-    # Saved cleaned data to CSV outputs with date
+    # Clean sheet names
     clean_name = sheet.split(" ", 1)[1] if " " in sheet else sheet
     
     file_name = clean_name.replace(" ","_").lower() + ".csv"
 
+    # Save cleaned data to CSV outputs with date
     output_path = f"output/{datetime.now().strftime('%Y-%m-%d')}_{file_name}"
     
     df.to_csv(output_path, index=False)
