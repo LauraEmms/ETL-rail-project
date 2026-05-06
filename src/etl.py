@@ -64,7 +64,6 @@ for sheet in xls.sheet_names:
             new_columns[col] = "cancellations_%"
     df = df.rename(columns=new_columns)
 
-
     # Numeric cleaning
     target_cols = [
         config.BUSINESS_RULE["stops_col"],
