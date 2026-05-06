@@ -46,7 +46,7 @@ The ETL Process is fully automated using GitHub Actions:
 - Push to main branch
 - Daily scheduled run (8:00 AM)
 - Manual Trigger
-- 
+  
 #### Pipeline Steps:
 1. Checkout repository
 2. Set up Python environment
