@@ -1,7 +1,7 @@
 from datetime import datetime
 import numpy as np
 import pandas as pd
-from src import config
+import config
 import sys
 import os
 
