@@ -1,4 +1,4 @@
-# ETL Pipeline for Rail Performance Data (Multi-Sheet Excel)
+# ETL Pipeline for Rail Performance Data
 
 ## Overview
 This project demonstrates an end-to-end ETL (Extract, Transform, Load) pipeline built in Python to process UK rail performance data. The pipeline automates data cleaning and transformation and utilises CI/CD automation to produce structured outputs, ready for analysis.
