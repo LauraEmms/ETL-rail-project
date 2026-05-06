@@ -40,7 +40,7 @@ https://dataportal.orr.gov.uk/statistics/performance/passenger-rail-performance/
 
 ## Automation (CI/CD)
 ### GitHub Actions Pipeline
-The ETL Process is fully automated using GitHub Actions:
+The ETL Process is fully automated using GitHub Actions. The pipeline runs daily and successfully generates CSV outputs, which are stored as downloadable artifacts in each run.
 
 #### Triggers:
 - Push to main branch
