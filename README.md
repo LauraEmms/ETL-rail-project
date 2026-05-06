@@ -7,7 +7,7 @@ The goal is to simulate a lightweight data engineering workflow with CI/CD autom
 
 ### Data Source
 The data source contains public sector information licensed under the Open Government Licence v3.0 from the Office of Rail and Road:
-https://dataportal.orr.gov.uk/statistics/performance/passenger-rail-performance/
+https://dataportal.orr.gov.uk/performance
 
 ## Tech Stack
 - Python (pandas, numpy)
