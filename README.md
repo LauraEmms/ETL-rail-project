@@ -66,7 +66,7 @@ To ensure robustness, the pipeline:
 ![ETL Pipeline](docs/etl_pipeline.png)
 
 
-### Streamlit Dashboard
+## Streamlit Dashboard
 ![Dashboard](docs/dashboard_1.png)
 ![Dashboard](docs/dashboard_2.png)
 
