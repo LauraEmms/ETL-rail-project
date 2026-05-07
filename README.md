@@ -4,7 +4,7 @@
 This project implements an end-to-end ETL (Extract, Transform, Load) pipeline in Python to process UK rail performance data. It automates data ingestion, cleaning, and transformation across multiple datasets and uses CI/CD automation to generate structured outputs for analysis. The final dataset is visualised through an interactive Streamlit dashboard for exploratory analysis of railway performance metrics by route and region.
 
 ### Data Source
-The data source contains public sector information licensed under the Open Government Licence v3.0 from the Office of Rail and Road:
+The project uses public sector rail performance data licensed under the Open Government Licence v3.0 from the Office of Rail and Road:
 https://dataportal.orr.gov.uk/performance
 
 ## Tech Stack
