@@ -67,7 +67,8 @@ To ensure robustness, the pipeline:
 
 
 ### Streamlit Dashboard
-
+![Dashboard](docs/dashboard_1.png)
+![Dashboard](docs/dashboard_2.png)
 
 ### Future Improvements
 Planned next steps include:
