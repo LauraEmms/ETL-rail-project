@@ -16,7 +16,10 @@ st.dataframe(df)
 st.sidebar.header("Filter")
 
 # Feature selection 
-feature = st.sidebar.selectbox("Select a feature to visualise", df.columns[[3,4,5,6,7]])
+feature = st.sidebar.selectbox(
+    "Select a feature to visualise", 
+    df.columns[[3,4,5,6,7]]
+)
 
 # Range selection based on selected feature
 min_value = float(df[feature].min())
